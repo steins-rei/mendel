@@ -1,0 +1,12 @@
+@use '@styles/utils/index' as *;
+
+.primary-button {
+  @include full-center;
+
+  padding: var(--unit-8px) var(--unit-24px);
+
+  background-color: var(--color-primary);
+  user-select: none;
+  color: var(--color-foreground-contrast);
+  border-radius: 4px;
+}

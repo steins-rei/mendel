@@ -1,0 +1,73 @@
+@use './utils/index' as *;
+
+:root {
+  --color-background-main: #FBFBFB;
+  --color-background-sub: #FEFEFE;
+  --color-background-contrast: #000;
+  --color-foreground-main: #090909;
+  --color-foreground-contrast: #FFF;
+  --color-border: #282828;
+  --color-primary: #000;
+
+  --opacity-mute: 0.5;
+  --opacity-mute-partial: 0.65;
+  --opacity-mute-off: 0.8;
+  
+  --font-weight-reg: 300;
+  --font-weight-med: 400;
+  --font-weight-bold-semi: 500;
+  --font-weight-bold: 600;
+
+  --font-size-sm: clamp(.75rem, 1vw + .5rem, .95rem);
+  --font-size-m: clamp(1rem, 1vw + .5rem, 1.5rem);
+  --font-size-lg: clamp(1.5rem, 1vw + 1rem, 6rem);
+  --font-size-title: clamp(4rem, 2vw + 1rem, 12rem);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  @include flex-column;
+  gap: var(--unit-xsm);
+  
+  padding: var(--unit-xsm);
+  background: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--color-foreground);
+  letter-spacing: .3px;
+}
+
+* {
+  @include default-text;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  transition: .2s ease-out;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.--reactive {
+  opacity: var(--opacity-mute);
+}
+
+.--reactive:hover {
+  opacity: var(--opacity-mute-off);
+}
+
+.--reactive:active {
+  opacity: var(--opacity-mute-partial);
+  transform: scale(.925);
+}

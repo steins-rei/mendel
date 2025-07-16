@@ -1,0 +1,22 @@
+@use '@styles/utils/index' as *;
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: var(--unit-16px);
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0);
+
+  &__nav-container {
+    display: flex;
+
+    gap: var(--unit-16px);
+
+    &__item {
+      @include navi-text;
+    }
+  }
+}

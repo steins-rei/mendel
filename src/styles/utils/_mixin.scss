@@ -1,0 +1,65 @@
+// -- LAYOUT
+@mixin full-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin limit-width($min, $default, $max) {
+  min-width: $min;
+  width: $default;
+  max-width: $max;
+}
+
+@mixin limit-height($min, $default, $max) {
+  min-height: $min;
+  height: $default;
+  max-height: $max;
+}
+
+// -- TYPOGRAPHY
+
+@mixin default-text {
+  text-decoration: none;
+
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-reg);
+}
+
+@mixin navi-text {
+  @include default-text;
+
+  font-size: clamp(.75rem, 1vw + 1rem, 1.25rem);
+}
+
+@mixin title-text {
+  font-family: var(--font-gloock);
+  font-size: var(--font-size-title);
+}
+
+@mixin card-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: var(--font-size-m);
+}
+
+@mixin card-sub {
+  font-size: var(--font-size-sm);
+  opacity: var(--opacity-mute-partial);
+
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  white-space: normal;
+}

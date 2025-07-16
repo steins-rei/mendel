@@ -1,0 +1,8 @@
+@use '@styles/utils/index' as *;
+
+.core-content {
+  @include full-center;
+
+  width: 100%;
+  height: 100%;
+}
